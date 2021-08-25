@@ -1,7 +1,6 @@
-# Project Title
+# Password Generator
 
-One Paragraph of project description goes here
-
+An application that enables users to generate random passwords based on criteria that they’ve selected. 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

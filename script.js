@@ -92,6 +92,21 @@ var upperCasedCharacters = [
 
 var generateBtn = document.querySelector("#generate");
 
+function getUserOptions () {
+  var lowerCaseChar = false
+  var upperCaseChar = false
+  var numericChar = false
+  var specialChar = false
+  var length = parseInt (
+    prompt("How long would you like your password to be?")
+  );
+
+  lowerCaseChar = confirm("Do you want to include lower case characters?");
+  upperCaseChar = confirm("Do you want to include upper case characters?");
+  numericChar = confirm("Do you want to include numeric characters?");
+  specialChar = confirm("Do you want to include special characters?");
+  
+}
 function generatePasssword () {
 
   var password = ""
