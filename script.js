@@ -1,6 +1,6 @@
 // Assignment Code
 // Array of special characters to be included in password
-var hasSpecialCharacters = [
+var specialCharacters = [
   '@',
   '%',
   '+',
@@ -27,7 +27,7 @@ var hasSpecialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var hasNumericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
 var lowerCasedCharacters = [
@@ -150,7 +150,21 @@ function generatePasssword () {
 
   if (options.hasLowerCaseChar) {
     possibleChar = possibleChar.concat(lowerCasedCharacters)
+    definiteChar = push(getRandom(lowerCasedCharacters))
   }
+  if (options.hasUpperCaseChar) {
+    possibleChar = possibleChar.concat(upperCasedCharacters)
+    definiteChar = push(getRandom(upperCasedCharacters))
+  }
+  if (options.hasNumericChar) {
+    possibleChar = possibleChar.concat(numericCharacters)
+    definiteChar = push(getRandom(numericCharacters))
+  }
+  if (options.hasSpecialChar) {
+    possibleChar = possibleChar.concat(specialCharacters)
+    definiteChar = push(getRandom(specialCharacters))
+  }
+  
 
 
   
