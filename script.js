@@ -105,8 +105,37 @@ function getUserOptions () {
   upperCaseChar = confirm("Do you want to include upper case characters?");
   numericChar = confirm("Do you want to include numeric characters?");
   specialChar = confirm("Do you want to include special characters?");
-  
+
+  if (isNaN(length) === true) {
+    alert("Password length must be provided as a number");
+    return;
+  }
+  if (length < 8 || length > 128) {
+    alert("Please provide a number between 8 and 128");
+    return;
+  }
+  if (
+    lowerCaseChar === false &&
+    upperCaseChar === false &&
+    numericChar === false &&
+    specialChar === false 
+  ) {
+    alert('Must select at least one character type');
+    return;
+  }
+
+  var passworOptions = {
+    length: length,
+    lowerCaseChar: lowerCaseChar,
+    upperCaseChar: upperCaseChar,
+    numericChar: numericChar,
+    specialChar: specialChar
+  };
+   
+  return passworOptions;
 }
+
+
 function generatePasssword () {
 
   var password = ""
