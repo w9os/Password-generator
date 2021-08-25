@@ -135,6 +135,12 @@ function getUserOptions () {
   return passworOptions;
 }
 
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex];
+
+  return randElement;
+}
 
 function generatePasssword () {
 
