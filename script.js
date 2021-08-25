@@ -149,26 +149,35 @@ function generatePasssword () {
   var options = getUserOptions();
 
   if (options.hasLowerCaseChar) {
-    possibleChar = possibleChar.concat(lowerCasedCharacters)
-    definiteChar = push(getRandom(lowerCasedCharacters))
+    possibleChar = possibleChar.concat(lowerCasedCharacters);
+    definiteChar = push(getRandom(lowerCasedCharacters));
   }
   if (options.hasUpperCaseChar) {
-    possibleChar = possibleChar.concat(upperCasedCharacters)
-    definiteChar = push(getRandom(upperCasedCharacters))
+    possibleChar = possibleChar.concat(upperCasedCharacters);
+    definiteChar = push(getRandom(upperCasedCharacters));
   }
   if (options.hasNumericChar) {
-    possibleChar = possibleChar.concat(numericCharacters)
-    definiteChar = push(getRandom(numericCharacters))
+    possibleChar = possibleChar.concat(numericCharacters);
+    definiteChar = push(getRandom(numericCharacters));
   }
   if (options.hasSpecialChar) {
-    possibleChar = possibleChar.concat(specialCharacters)
-    definiteChar = push(getRandom(specialCharacters))
+    possibleChar = possibleChar.concat(specialCharacters);
+    definiteChar = push(getRandom(specialCharacters));
   }
-  
 
+  for ( var i = 0; i < options.length; i++) {
+    var possibleChar = getRandom(possibleChar);
+    result.push(possibleChar);
+  }
 
-  
+  for ( var i = 0; i < definiteChar.length; i++) {
+    result[i] = definiteChar[i];
+  }
+
+  return result.join('');
 }
+
+var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
