@@ -1,6 +1,6 @@
 // Assignment Code
 // Array of special characters to be included in password
-var specialCharacters = [
+var hasSpecialCharacters = [
   '@',
   '%',
   '+',
@@ -27,7 +27,7 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var hasNumericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
 var lowerCasedCharacters = [
@@ -93,18 +93,18 @@ var upperCasedCharacters = [
 var generateBtn = document.querySelector("#generate");
 
 function getUserOptions () {
-  var lowerCaseChar = false
-  var upperCaseChar = false
-  var numericChar = false
-  var specialChar = false
+  var hasLowerCaseChar = false
+  var hasUpperCaseChar = false
+  var hasNumericChar = false
+  var hasSpecialChar = false
   var length = parseInt (
     prompt("How long would you like your password to be?")
   );
 
-  lowerCaseChar = confirm("Do you want to include lower case characters?");
-  upperCaseChar = confirm("Do you want to include upper case characters?");
-  numericChar = confirm("Do you want to include numeric characters?");
-  specialChar = confirm("Do you want to include special characters?");
+  hasLowerCaseChar = confirm("Do you want to include lower case characters?");
+  hasUpperCaseChar = confirm("Do you want to include upper case characters?");
+  hasNumericChar = confirm("Do you want to include numeric characters?");
+  hasSpecialChar = confirm("Do you want to include special characters?");
 
   if (isNaN(length) === true) {
     alert("Password length must be provided as a number");
@@ -115,10 +115,10 @@ function getUserOptions () {
     return;
   }
   if (
-    lowerCaseChar === false &&
-    upperCaseChar === false &&
-    numericChar === false &&
-    specialChar === false 
+    hasLowerCaseChar === false &&
+    hasUpperCaseChar === false &&
+    hasNumericChar === false &&
+    hasSpecialChar === false 
   ) {
     alert('Must select at least one character type');
     return;
@@ -126,10 +126,10 @@ function getUserOptions () {
 
   var passworOptions = {
     length: length,
-    lowerCaseChar: lowerCaseChar,
-    upperCaseChar: upperCaseChar,
-    numericChar: numericChar,
-    specialChar: specialChar
+    hasLowerCaseChar: hasLowerCaseChar,
+    hasUpperCaseChar: hasUpperCaseChar,
+    hasNumericChar: hasNumericChar,
+    hasSpecialChar: hasSpecialChar
   };
    
   return passworOptions;
@@ -143,13 +143,17 @@ function getRandom(arr) {
 }
 
 function generatePasssword () {
+  var result = [];
+  var possibleChar = [];
+  var definiteChar = [];
+  var options = getUserOptions();
 
-  var password = ""
+  if (options.hasLowerCaseChar) {
+    possibleChar = possibleChar.concat(lowerCasedCharacters)
+  }
 
-  // 
-  // 
 
-  return password;
+  
 }
 
 // Write password to the #password input
