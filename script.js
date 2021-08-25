@@ -142,7 +142,7 @@ function getRandom(arr) {
   return randElement;
 }
 
-function generatePasssword () {
+function generatePassword () {
   var result = [];
   var possibleChar = [];
   var definiteChar = [];
@@ -150,19 +150,19 @@ function generatePasssword () {
 
   if (options.hasLowerCaseChar) {
     possibleChar = possibleChar.concat(lowerCasedCharacters);
-    definiteChar = push(getRandom(lowerCasedCharacters));
+    definiteChar.push(getRandom(lowerCasedCharacters));
   }
   if (options.hasUpperCaseChar) {
     possibleChar = possibleChar.concat(upperCasedCharacters);
-    definiteChar = push(getRandom(upperCasedCharacters));
+    definiteChar.push(getRandom(upperCasedCharacters));
   }
   if (options.hasNumericChar) {
     possibleChar = possibleChar.concat(numericCharacters);
-    definiteChar = push(getRandom(numericCharacters));
+    definiteChar.push(getRandom(numericCharacters));
   }
   if (options.hasSpecialChar) {
     possibleChar = possibleChar.concat(specialCharacters);
-    definiteChar = push(getRandom(specialCharacters));
+    definiteChar.push(getRandom(specialCharacters));
   }
 
   for ( var i = 0; i < options.length; i++) {
